@@ -1,0 +1,26 @@
+= kotlin-dsl-git-props
+
+== Command-Line Options
+
+[source,shell]
+----
+$ ./gradlew clean                 # Cleans project's workspace
+
+$ ./gradlew detekt                # Runs static code analyzer (detekt)
+$ ./gradlew test                  # Runs all tests
+
+$ ./gradlew installShadowDist     # Creates a distribution
+
+$ ./gradlew run                   # Runs the application
+----
+
+// ./gradlew clean installShadowDist
+// ./gradlew run
+
+== Running Application within IntelliJ IDEA
+
+Create a new `Configuration` with type `Application` and use the following settings:
+
+- **Main class**: `io.vertx.core.Launcher`
+- **VM options**: `-Dlogback.configurationFile=src/main/resources/logback.xml -Dvertx.logger-delegate-factory-class-name=io.vertx.core.logging.SLF4JLogDelegateFactory`
+- **Program arguments**: `run org.acme.Application -conf src/main/resources/config.json`

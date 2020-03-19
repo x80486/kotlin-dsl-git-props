@@ -1,0 +1,14 @@
+{
+  "org.acme.verticle.HttpServerVerticle": {
+    // "instances": 5,
+    "config": {
+      "body_limit": 5120,
+      "cert_path": "server-cert.pem",
+      "host": "0.0.0.0",
+      "key_path": "server-key.pem",
+      "port": 9080,
+      "use_alpn": true,
+      "use_ssl": true
+    }
+  }
+}

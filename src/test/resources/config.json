@@ -1,0 +1,8 @@
+{
+  "org.acme.verticle.HttpServerVerticle": {
+    "config": {
+      "hostname": "0.0.0.0",
+      "port": 9081
+    }
+  }
+}

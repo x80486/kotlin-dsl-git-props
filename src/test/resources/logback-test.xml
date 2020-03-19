@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration packagingData="true">
+  <property name="log-pattern" value="%d{'MM-dd-yyyy HH:mm:ss.SSS'} |- %highlight(%5level) in %cyan(%logger{0}:%line) %magenta([%t]) - %msg%n" />
+
+  <appender name="Console" class="ch.qos.logback.core.ConsoleAppender">
+    <encoder>
+      <charset>UTF-8</charset>
+      <pattern>${log-pattern}</pattern>
+    </encoder>
+  </appender>
+
+  <appender name="AsyncConsole" class="ch.qos.logback.classic.AsyncAppender">
+    <appender-ref ref="Console" />
+    <discardingThreshold>0</discardingThreshold>
+    <includeCallerData>true</includeCallerData>
+    <queueSize>500</queueSize>
+  </appender>
+
+  <!-- Logger levels: trace, debug, info, warn, error, off -->
+  <logger name="org.acme" level="warn" additivity="false">
+    <appender-ref ref="AsyncConsole" />
+  </logger>
+
+  <root level="warn">
+    <appender-ref ref="AsyncConsole" />
+  </root>
+</configuration>

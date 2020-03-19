@@ -1,0 +1,15 @@
+#
+# Excludes
+.gradle/
+.idea/
+.vertx/
+build/
+out/
+
+.DS_Store
+Thumbs.db
+*.iml
+
+
+#
+# Includes
